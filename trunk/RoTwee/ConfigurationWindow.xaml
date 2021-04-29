@@ -1,0 +1,14 @@
+﻿<Window x:Class="RoTwee.ConfigurationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ConfigurationWindow" Height="228" Width="300" ResizeMode="NoResize" >
+    <Grid>
+        <Label Content="Format of tweet for tune" Height="28" HorizontalAlignment="Left" Name="_lbl_formatOfTweetForTune" VerticalAlignment="Top" />
+        <TextBox Height="24" HorizontalAlignment="Left" Margin="23,24,0,0" Name="_tbx_formatOfTweetForTune" VerticalAlignment="Top" Width="243" />
+        <Label Content="Format of tweet for tune with hashtag" Height="28" HorizontalAlignment="Left" Margin="0,48,0,0" Name="_lbl_formatOfTweetForTuneWithHashTag" VerticalAlignment="Top" />
+        <TextBox Height="24" HorizontalAlignment="Left" Margin="23,72,0,0" Name="_tbx_formatOfTweetForTuneWithHashTag" VerticalAlignment="Top" Width="243" />
+        <Button Content="Done" Height="23" HorizontalAlignment="Left" Margin="110,154,0,0" Name="_btn_Done" VerticalAlignment="Top" Width="75" Click="_btn_Done_Click" />
+        <Button Content="Cancel" Height="23" HorizontalAlignment="Left" Margin="191,154,0,0" Name="_btn_Cancel" VerticalAlignment="Top" Width="75" Click="_btn_Cancel_Click" />
+        <Button Content="Revert to default" Height="23" HorizontalAlignment="Left" Margin="159,110,0,0" Name="_btn_revertToDefault" VerticalAlignment="Top" Width="107" Click="_btn_revertToDefault_Click" />
+    </Grid>
+</Window>

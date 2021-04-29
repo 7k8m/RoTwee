@@ -1,0 +1,64 @@
+﻿<Window x:Class="RoTwee.TweetsWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="RoTwee" Height="300" Width="300" ResizeMode="CanResize"  Icon="rotate.ico" Loaded="Window_Loaded">
+    <Grid ShowGridLines="True" Background="Black" Name="_grid" 
+        MouseDown="_grid_MouseDown" MouseUp="_grid_MouseUp" MouseMove="_grid_MouseMove" MouseWheel="_grid_MouseWheel">
+        <Button Height="16" HorizontalAlignment="Right" Name="_btnRecordCounter" VerticalAlignment="Bottom" Width="16"  Click="_btnRecordCount_Click" FontSize="8" Background="Ivory" Foreground="Black" BorderThickness="1" Margin="0,0,112,0">
+            <Button.ToolTip >
+                <TextBlock Name="_tblk_recordCounter"></TextBlock>
+            </Button.ToolTip>
+            <Image Source="ktimer.png"></Image>
+        </Button>
+            <Button Height="16" HorizontalAlignment="Right" Name="_btnChangeColor" VerticalAlignment="Bottom" Width="16"  Click="_btnChangeColor_Click" FontSize="8" Background="Ivory" Foreground="Black" BorderThickness="1" Margin="0,0,96,0">
+            <Button.ToolTip >
+                <TextBlock Name="_tblk_changeColor">色を変える。</TextBlock>
+            </Button.ToolTip>
+            <Image Source="Colorscm.png"></Image>
+        </Button>
+        <Button Height="16" HorizontalAlignment="Right" Name="_btnWriteMessage" VerticalAlignment="Bottom" Width="16" Click="_btnInputNewMessage_Click" FontSize="8" Background="Ivory" Foreground="Black" BorderThickness="1" Margin="0,0,80,0">
+            <Button.ToolTip >
+                <TextBlock Name="_tblk_writeMessage">コメントを書き込む。</TextBlock>
+            </Button.ToolTip>
+            <Image Source="send.ico"></Image>
+        </Button>
+        <Button Height="16" HorizontalAlignment="Right" Margin="0,0,64,0" Name="_btnPostTune" VerticalAlignment="Bottom" Width="16" Click="_btnPostTune_Click" FontSize="8" Background="Ivory" Foreground="Black" BorderThickness="1">
+            <Button.ToolTip >
+                <TextBlock Name="_tblk_postTune">再生中の曲を書き込む。</TextBlock>
+            </Button.ToolTip>
+            <Image Source="music.ico"></Image>
+        </Button>
+        <Button Height="16" HorizontalAlignment="Right" Margin="0,0,48,0" Name="_btnPostTuneWithHashTag" VerticalAlignment="Bottom" Width="16" Click="_btnPostTuneWithHashtag_Click" FontSize="8" Background="Ivory" Foreground="Black" BorderThickness="1">
+            <Button.ToolTip >
+                <TextBlock Name="_tblk_postTuneWithHashTag">再生中の曲をハッシュタグをつけて書き込む。</TextBlock>
+            </Button.ToolTip>
+            <Image Source="music_tag.ico"></Image>
+        </Button>
+        <Button Height="16" Margin="0,0,32,0" Name="_btnPostTuneWithText" HorizontalAlignment="Right"  VerticalAlignment="Bottom" Width="16" Click="_btnPostTuneWithText_Click" FontSize="8" Background="Ivory" Foreground="Black" BorderThickness="1">
+            <Button.ToolTip >
+                <TextBlock Name="_tblk_postTuneWithText">再生中の曲について書き込む。</TextBlock>
+            </Button.ToolTip>
+            <Image Source="music_text.ico"></Image>
+        </Button>
+        <Button Height="16" HorizontalAlignment="Right" Margin="0,0,16,0" Name="_configurate" VerticalAlignment="Bottom" Width="16" Click="_configurate_Click" FontSize="8" Background="Ivory" Foreground="Black" BorderThickness="1">
+            <Button.ToolTip >
+                <TextBlock Name="_tblk_configurate">設定する。</TextBlock>
+            </Button.ToolTip>
+            <Image Source="1278076579_config.ico"></Image>
+        </Button>
+        <Button Height="16" HorizontalAlignment="Right" Name="_btnAccessServer" VerticalAlignment="Bottom" Width="16" Click="_btnAccessServer_Click" FontSize="8" Background="Ivory" Foreground="Black" BorderThickness="1">
+            <Button.ToolTip >
+                <TextBlock Name="_tblk_accessServer">再読み込み</TextBlock>
+            </Button.ToolTip>
+            <Image Source="rotate.ico"></Image>
+        </Button>
+        <Grid.Triggers >
+            <EventTrigger RoutedEvent="Grid.Loaded">
+                <BeginStoryboard>
+                    <Storyboard x:Name="rotateMessages">
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Grid.Triggers>
+    </Grid>
+</Window>

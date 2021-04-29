@@ -1,0 +1,111 @@
+﻿<Window x:Class="RoTwee.TweetsWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="RoTwee" Height="300" Width="300" ResizeMode="NoResize" Icon="rotate.ico">
+    <Grid ShowGridLines="True" Background="Black">
+        <TextBlock Margin="45,0,-1000,0" Name="textBlock0" Text="00000" Height="20" Width="10000" VerticalAlignment="Top" Foreground="GreenYellow" FontSize="10" ToolTipService.ShowDuration="2147483647">
+            <TextBlock.ToolTip ><TextBlock /></TextBlock.ToolTip>    
+            <TextBlock.RenderTransform>
+                <RotateTransform x:Name ="textBlock0_rotate" CenterX="-40" CenterY="10" Angle="-15"/>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <!--これをいくつもならべよー。-->
+        <TextBlock Margin="45,0,-1000,0" Name="textBlock1" Text="01234567890123456789" Height="20" Width="10000" VerticalAlignment="Top" Foreground="GreenYellow" FontSize="10" ToolTipService.ShowDuration="2147483647">
+            <TextBlock.ToolTip ><TextBlock /></TextBlock.ToolTip>    
+            <TextBlock.RenderTransform>
+                <RotateTransform  x:Name ="textBlock1_rotate" CenterX="-40" CenterY="10" Angle="0" />
+            </TextBlock.RenderTransform> 
+        </TextBlock>
+        <TextBlock Margin="45,0,-1000,0" Name="textBlock2" Text="222222" Height="20" Width="10000" VerticalAlignment="Top" Foreground="GreenYellow" FontSize="10" ToolTipService.ShowDuration="2147483647">
+            <TextBlock.ToolTip ><TextBlock /></TextBlock.ToolTip>   
+            <TextBlock.RenderTransform>
+                <RotateTransform  x:Name ="textBlock2_rotate" CenterX="-40" CenterY="10" Angle="15"  />
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock Margin="45,0,-1000,0" Name="textBlock3" Text="3333333" Height="20" Width="10000" VerticalAlignment="Top" Foreground="GreenYellow" FontSize="10" ToolTipService.ShowDuration="2147483647">
+            <TextBlock.ToolTip><TextBlock /></TextBlock.ToolTip>   
+            <TextBlock.RenderTransform>
+                <RotateTransform  x:Name ="textBlock3_rotate" CenterX="-40" CenterY="10" Angle="30" />
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock Margin="45,0,-1000,0" Name="textBlock4" Text="4444444" Height="20" Width="10000" VerticalAlignment="Top" Foreground="GreenYellow" FontSize="10" ToolTipService.ShowDuration="2147483647">
+            <TextBlock.ToolTip ><TextBlock /></TextBlock.ToolTip>   
+            <TextBlock.RenderTransform>
+                <RotateTransform  x:Name ="textBlock4_rotate" CenterX="-40" CenterY="10" Angle="45" />
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock Margin="45,0,-1000,0" Name="textBlock5" Text="555555" Height="20" Width="10000" VerticalAlignment="Top" Foreground="GreenYellow" FontSize="10" ToolTipService.ShowDuration="2147483647">
+            <TextBlock.ToolTip ><TextBlock /></TextBlock.ToolTip>   
+            <TextBlock.RenderTransform>
+                <RotateTransform  x:Name ="textBlock5_rotate" CenterX="-40" CenterY="10" Angle="60" />
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock Margin="45,0,-1000,0" Name="textBlock6" Text="666666" Height="20" Width="10000" VerticalAlignment="Top" Foreground="GreenYellow" FontSize="10" ToolTipService.ShowDuration="2147483647">
+            <TextBlock.ToolTip ><TextBlock /></TextBlock.ToolTip>   
+            <TextBlock.RenderTransform>
+                <RotateTransform  x:Name ="textBlock6_rotate" CenterX="-40" CenterY="10" Angle="75" />
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock Margin="45,0,-1000,0" Name="textBlock7" Text="777777" Height="20" Width="10000" VerticalAlignment="Top" Foreground="GreenYellow" FontSize="10" ToolTipService.ShowDuration="2147483647">
+            <TextBlock.ToolTip ><TextBlock /></TextBlock.ToolTip>   
+            <TextBlock.RenderTransform>
+                <RotateTransform  x:Name ="textBlock7_rotate" CenterX="-40" CenterY="10" Angle="90" />
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <Button Height="16" HorizontalAlignment="Right" Name="_btnWriteMessage" VerticalAlignment="Bottom" Width="16" Click="_btnInputNewMessage_Click" FontSize="8" Background="Ivory" Foreground="Black" BorderThickness="1" Margin="0,0,16.66,0">
+            <Button.ToolTip >
+                <TextBlock Name="_tblk_writeMessage">コメントを書き込む。</TextBlock>
+            </Button.ToolTip>
+            <Image Source="send.ico"></Image>
+        </Button>
+        <Button Height="16" HorizontalAlignment="Right" Name="_btnAccessServer" VerticalAlignment="Bottom" Width="16" Click="_btnAccessServer_Click" FontSize="8" Background="Ivory" Foreground="Black" BorderThickness="1">
+            <Button.ToolTip >
+                <TextBlock Name="_tblk_accessServer">再読み込み</TextBlock>
+            </Button.ToolTip>
+            <Image Source="rotate.ico"></Image>
+        </Button>
+        <!-- -->
+        <Grid.Triggers >
+            <EventTrigger RoutedEvent="Grid.Loaded">
+                <BeginStoryboard>
+                    <Storyboard x:Name="rotateMessages">
+                        <DoubleAnimation 
+                          Storyboard.TargetName="textBlock0_rotate"
+                          Storyboard.TargetProperty="Angle"
+                          From="-15" To="0" Duration="0:0:1" 
+                            CurrentStateInvalidated="DoubleAnimation_CurrentStateInvalidated"
+                             Completed="DoubleAnimation_Completed"/>
+                        <DoubleAnimation 
+                          Storyboard.TargetName="textBlock1_rotate"
+                          Storyboard.TargetProperty="Angle"
+                          From="0" To="15" Duration="0:0:1"/>
+                        <DoubleAnimation 
+                          Storyboard.TargetName="textBlock2_rotate"
+                          Storyboard.TargetProperty="Angle"
+                          From="15" To="30" Duration="0:0:1"/>
+                        <DoubleAnimation 
+                          Storyboard.TargetName="textBlock3_rotate"
+                          Storyboard.TargetProperty="Angle"
+                          From="30" To="45" Duration="0:0:1"/>
+                        <DoubleAnimation 
+                          Storyboard.TargetName="textBlock4_rotate"
+                          Storyboard.TargetProperty="Angle"
+                          From="45" To="60" Duration="0:0:1"/>
+                        <DoubleAnimation 
+                          Storyboard.TargetName="textBlock5_rotate"
+                          Storyboard.TargetProperty="Angle"
+                          From="60" To="75" Duration="0:0:1"/>
+                        <DoubleAnimation 
+                          Storyboard.TargetName="textBlock6_rotate"
+                          Storyboard.TargetProperty="Angle"
+                          From="75" To="90" Duration="0:0:1"/>
+                        <DoubleAnimation 
+                          Storyboard.TargetName="textBlock7_rotate"
+                          Storyboard.TargetProperty="Angle"
+                          From="90" To="105" Duration="0:0:1"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Grid.Triggers>
+    </Grid>
+</Window>
